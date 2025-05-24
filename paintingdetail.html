@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Details - VelvetBrush</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .painting-detail-section {
+            padding: 5rem 0;
+        }
+        
+        .painting-detail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+        
+        .painting-detail-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .painting-detail-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .painting-detail-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .painting-detail-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .painting-detail-category {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .painting-detail-description {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .painting-detail-story {
+            border-left: 3px solid var(--secondary-color);
+            padding: 1rem 0 1rem 1.5rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            color: #555;
+            background: rgba(255, 107, 107, 0.05);
+        }
+        
+        .painting-detail-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+        }
+        
+        .painting-detail-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .detail-btn {
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .buy-now-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .buy-now-btn:hover {
+            background: #4a2d77;
+        }
+        
+        .add-cart-btn {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .add-cart-btn:hover {
+            background: rgba(90, 62, 133, 0.1);
+        }
+        
+        .painting-detail-meta {
+            margin-bottom: 2rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-label {
+            font-weight: bold;
+            width: 120px;
+            color: var(--primary-color);
+        }
+        
+        .meta-value {
+            color: #555;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .back-link i {
+            margin-right: 0.5rem;
+        }
+        
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .painting-detail-container {
+                flex-direction: column;
+            }
+            
+            .painting-detail-image {
+                text-align: center;
+            }
+            
+            .painting-detail-actions {
+                flex-direction: column;
+            }
+            
+            .detail-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>VelvetBrush</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="myartworks.html">My Artworks</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="painting-detail-section">
+        <div class="container">
+            <a href="javascript:history.back()" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Gallery
+            </a>
+            
+            <div class="painting-detail-container" id="painting-detail-container">
+                <!-- Painting details will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <section id="cart-section" class="cart-section">
+        <div class="container">
+            <div class="cart-overlay hidden">
+                <div class="cart-container">
+                    <div class="cart-header">
+                        <h3>Your Cart</h3>
+                        <button class="close-cart">&times;</button>
+                    </div>
+                    <div class="cart-items">
+                        <!-- Cart items will be added here dynamically -->
+                    </div>
+                    <div class="cart-footer">
+                        <div class="cart-total">
+                            <h4>Total: <span class="total-amount">$0</span></h4>
+                        </div>
+                        <button class="checkout-btn">Checkout</button>
+                        <button class="clear-cart-btn">Clear Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2023 VelvetBrush. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get painting ID from URL
+            const params = new URLSearchParams(window.location.search);
+            const paintingId = params.get('id');
+            
+            if (!paintingId) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Fetch painting data
+            fetch('js/script.js')
+                .then(response => response.text())
+                .then(data => {
+                    // Extract paintings array from script.js
+                    const paintingsMatch = data.match(/const paintings = \[([\s\S]*?)\];/);
+                    if (paintingsMatch && paintingsMatch[1]) {
+                        // Evaluate the paintings array
+                        const paintingsText = 'const paintings = [' + paintingsMatch[1] + '];';
+                        eval(paintingsText);
+                        
+                        // Find the painting by ID
+                        const painting = paintings.find(p => p.id === parseInt(paintingId));
+                        
+                        if (painting) {
+                            displayPaintingDetails(painting);
+                        } else {
+                            window.location.href = 'index.html';
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading painting details:', error);
+                    window.location.href = 'index.html';
+                });
+        });
+        
+        function displayPaintingDetails(painting) {
+            const container = document.getElementById('painting-detail-container');
+            
+            // Stories for each painting (you can customize these)
+            const stories = {
+                1: "This Ganesha painting was inspired by my childhood visits to temples in South India. I was always fascinated by the vibrant colors and intricate patterns that adorned the temple walls. The elephant god symbolizes wisdom and the removal of obstacles, which is why I chose to depict him surrounded by mandala-inspired patterns that represent the universe and its infinite possibilities.",
+                2: "Music has always been a source of peace and inspiration for me. This mandala combines my love for music and meditation. I created this piece during a particularly challenging time in my life, and the process of drawing each intricate pattern while listening to classical guitar music was incredibly therapeutic. The guitar at the center represents how music can be a guiding force in our lives.",
+                3: "The peacock is a symbol of beauty and immortality in many cultures. This mandala was created during a spiritual retreat where I was exploring the concept of inner beauty. Each feather was meticulously drawn to represent how our individual qualities come together to create something magnificent when we live in harmony with our true nature.",
+                4: "This painting was inspired by a magical evening I spent at a coastal town during my travels. The silhouette of a person on the bridge represents the journey we all take in life - sometimes we need to pause, look at the beauty around us, and appreciate the path we're on. The sunset symbolizes both endings and new beginnings, reminding us that each day brings new opportunities.",
+                5: "Nature has always been my greatest teacher. These flowers represent the diversity and resilience of life. I painted this during spring when everything was blooming around me, and I was struck by how each flower, regardless of its size or color, contributes to the beauty of the garden. It's a reminder that we all have our unique beauty to offer to the world.",
+                6: "This portrait was inspired by a woman I met during my travels who shared stories of how music had transformed her life. The vibrant background represents the colorful emotions that music evokes, while her serene expression shows the inner peace that creativity can bring. The traditional elements mixed with modern composition symbolize how art transcends time."
+            };
+            
+            // Additional details for each painting
+            const details = {
+                1: {
+                    medium: "Acrylic on Canvas",
+                    size: "24\" x 36\"",
+                    created: "2021",
+                    framed: "Yes, Wooden Frame"
+                },
+                2: {
+                    medium: "Fine-tip Pen on Paper",
+                    size: "18\" x 24\"",
+                    created: "2022",
+                    framed: "Yes, Black Frame with Glass"
+                },
+                3: {
+                    medium: "Fine-tip Pen on Paper",
+                    size: "18\" x 18\"",
+                    created: "2022",
+                    framed: "Yes, White Frame with Glass"
+                },
+                4: {
+                    medium: "Watercolor and Acrylic",
+                    size: "30\" x 40\"",
+                    created: "2023",
+                    framed: "Yes, Floating Frame"
+                },
+                5: {
+                    medium: "Acrylic on Canvas",
+                    size: "16\" x 20\"",
+                    created: "2023",
+                    framed: "No, Gallery Wrapped Canvas"
+                },
+                6: {
+                    medium: "Mixed Media on Canvas",
+                    size: "24\" x 30\"",
+                    created: "2022",
+                    framed: "Yes, Wooden Frame"
+                }
+            };
+            
+            // Set page title
+            document.title = `${painting.title} - VelvetBrush`;
+            
+            const paintingDetails = `
+                <div class="painting-detail-image">
+                    <img src="${painting.image}" alt="${painting.title}">
+                </div>
+                <div class="painting-detail-info">
+                    <h1 class="painting-detail-title">${painting.title}</h1>
+                    <span class="painting-detail-category">${painting.category.charAt(0).toUpperCase() + painting.category.slice(1)}</span>
+                    <p class="painting-detail-description">${painting.description}</p>
+                    <div class="painting-detail-story">
+                        <p>${stories[painting.id] || "This piece holds a special place in my heart and represents a unique moment of inspiration."}</p>
+                    </div>
+                    <div class="painting-detail-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Medium:</span>
+                            <span class="meta-value">${details[painting.id]?.medium || "Acrylic on Canvas"}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Size:</span>
+                            <span class="meta-value">${details[painting.id]?.size || "24\" x 36\""}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Created:</span>
+                            <span class="meta-value">${details[painting.id]?.created || "2023"}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Framed:</span>
+                            <span class="meta-value">${details[painting.id]?.framed || "Yes"}</span>
+                        </div>
+                    </div>
+                    <div class="painting-detail-price">$${painting.price.toFixed(2)}</div>
+                    <div class="painting-detail-actions">
+                        <a href="#" class="detail-btn buy-now-btn" data-id="${painting.id}">Buy Now</a>
+                        <a href="#" class="detail-btn add-cart-btn" data-id="${painting.id}">Add to Cart</a>
+                    </div>
+                </div>
+            `;
+            
+            container.innerHTML = paintingDetails;
+            
+            // Add event listeners to buttons
+            const addToCartBtn = document.querySelector('.add-cart-btn');
+            const buyNowBtn = document.querySelector('.buy-now-btn');
+            
+            if (addToCartBtn) {
+                addToCartBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const id = parseInt(this.dataset.id);
+                    // Check if cart functionality is available from script.js
+                    if (typeof addToCart === 'function') {
+                        addToCart(id);
+                    } else {
+                        // Fallback if the cart function isn't available
+                        alert(`${painting.title} added to cart!`);
+                    }
+                });
+            }
+            
+            if (buyNowBtn) {
+                buyNowBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const id = parseInt(this.dataset.id);
+                    // Check if cart functionality is available
+                    if (typeof addToCart === 'function') {
+                        addToCart(id);
+                        document.querySelector('.cart-overlay').classList.remove('hidden');
+                    } else {
+                        // Fallback
+                        alert(`Proceeding to checkout for ${painting.title}!`);
+                    }
+                });
+            }
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html> 

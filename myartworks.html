@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Artworks - VelvetBrush</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles for My Artworks page */
+        .artwork-page-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 0 1rem;
+        }
+        
+        .artwork-page-intro p {
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .artwork-full {
+            margin-bottom: 5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        .artwork-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .artwork-content {
+            padding: 2rem;
+        }
+        
+        .artwork-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .artwork-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .artwork-story {
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .artwork-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .artwork-category {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .artwork-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+        
+        .artwork-actions {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .artwork-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .buy-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .buy-btn:hover {
+            background: #4a2d77;
+        }
+        
+        .inquire-btn {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .inquire-btn:hover {
+            background: rgba(90, 62, 133, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .artwork-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .artwork-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .artwork-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>VelvetBrush</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="myartworks.html" class="active">My Artworks</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="artworks-section">
+        <div class="container">
+            <h2 class="section-title">My Artworks</h2>
+            
+            <div class="artwork-page-intro">
+                <p>Welcome to my personal collection of artworks. Each piece here tells a story and holds a special meaning to me. I hope they resonate with you as much as they do with me. Feel free to reach out if any piece speaks to your heart.</p>
+            </div>
+            
+            <div class="artwork-full">
+                <img src="images/painting1.jpg" alt="Ganesha Folk Art" class="artwork-image" onclick="window.location.href='paintingdetail.html?id=1';" style="cursor: pointer;">
+                <div class="artwork-content">
+                    <h3 class="artwork-title">Ganesha Folk Art</h3>
+                    <div class="artwork-story">
+                        <p>"This Ganesha painting was inspired by my childhood visits to temples in South India. I was always fascinated by the vibrant colors and intricate patterns that adorned the temple walls. The elephant god symbolizes wisdom and the removal of obstacles, which is why I chose to depict him surrounded by mandala-inspired patterns that represent the universe and its infinite possibilities."</p>
+                    </div>
+                    <p class="artwork-description">Colorful Ganesha artwork with intricate patterns and mandala-inspired details. Created using acrylic paints on canvas with fine detailing using special brushes. The bright colors symbolize joy and celebration, while the patterns represent the complexity of life and spirituality.</p>
+                    <div class="artwork-meta">
+                        <span class="artwork-category">Folk Art</span>
+                        <span class="artwork-price">$120.00</span>
+                    </div>
+                    <div class="artwork-actions">
+                        <a href="#" class="artwork-btn buy-btn">Add to Cart</a>
+                        <a href="index.html#contact" class="artwork-btn inquire-btn">Inquire About This Piece</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="artwork-full">
+                <img src="images/painting2.jpg" alt="Musical Mandala" class="artwork-image" onclick="window.location.href='paintingdetail.html?id=2';" style="cursor: pointer;">
+                <div class="artwork-content">
+                    <h3 class="artwork-title">Musical Mandala</h3>
+                    <div class="artwork-story">
+                        <p>"Music has always been a source of peace and inspiration for me. This mandala combines my love for music and meditation. I created this piece during a particularly challenging time in my life, and the process of drawing each intricate pattern while listening to classical guitar music was incredibly therapeutic. The guitar at the center represents how music can be a guiding force in our lives."</p>
+                    </div>
+                    <p class="artwork-description">Black and white mandala featuring guitar design with intricate zentangle patterns. Created using fine-tip pens on high-quality paper. The monochrome palette creates a sense of harmony and balance, while the guitar shape symbolizes the universal language of music.</p>
+                    <div class="artwork-meta">
+                        <span class="artwork-category">Mandala</span>
+                        <span class="artwork-price">$95.00</span>
+                    </div>
+                    <div class="artwork-actions">
+                        <a href="#" class="artwork-btn buy-btn">Add to Cart</a>
+                        <a href="index.html#contact" class="artwork-btn inquire-btn">Inquire About This Piece</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="artwork-full">
+                <img src="images/painting4.jpg" alt="Sunset Bridge" class="artwork-image" onclick="window.location.href='paintingdetail.html?id=4';" style="cursor: pointer;">
+                <div class="artwork-content">
+                    <h3 class="artwork-title">Sunset Bridge</h3>
+                    <div class="artwork-story">
+                        <p>"This painting was inspired by a magical evening I spent at a coastal town during my travels. The silhouette of a person on the bridge represents the journey we all take in life - sometimes we need to pause, look at the beauty around us, and appreciate the path we're on. The sunset symbolizes both endings and new beginnings, reminding us that each day brings new opportunities."</p>
+                    </div>
+                    <p class="artwork-description">Silhouette figure on a bridge against a vibrant sunset with palm trees. Created using watercolors and acrylics to achieve the vibrant sunset gradient. The composition creates a sense of peace and contemplation, inviting viewers to imagine themselves in this tranquil moment.</p>
+                    <div class="artwork-meta">
+                        <span class="artwork-category">Landscape</span>
+                        <span class="artwork-price">$150.00</span>
+                    </div>
+                    <div class="artwork-actions">
+                        <a href="#" class="artwork-btn buy-btn">Add to Cart</a>
+                        <a href="index.html#contact" class="artwork-btn inquire-btn">Inquire About This Piece</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart-section" class="cart-section">
+        <div class="container">
+            <div class="cart-overlay hidden">
+                <div class="cart-container">
+                    <div class="cart-header">
+                        <h3>Your Cart</h3>
+                        <button class="close-cart">&times;</button>
+                    </div>
+                    <div class="cart-items">
+                        <!-- Cart items will be added here dynamically -->
+                    </div>
+                    <div class="cart-footer">
+                        <div class="cart-total">
+                            <h4>Total: <span class="total-amount">$0</span></h4>
+                        </div>
+                        <button class="checkout-btn">Checkout</button>
+                        <button class="clear-cart-btn">Clear Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2023 VelvetBrush. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="paintingLightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="lightbox-image-container">
+                <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            </div>
+            <div class="lightbox-details">
+                <h2 class="lightbox-title" id="lightboxTitle"></h2>
+                <p class="lightbox-description" id="lightboxDescription"></p>
+                <div class="lightbox-price" id="lightboxPrice"></div>
+                <div class="lightbox-actions">
+                    <a href="#" class="lightbox-btn lightbox-view-btn" id="lightboxViewBtn">View Details</a>
+                    <button class="lightbox-btn lightbox-cart-btn" id="lightboxCartBtn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Add lightbox functionality to the My Artworks page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all artwork images
+            const artworkImages = document.querySelectorAll('.artwork-image');
+            
+            // Add click event to open lightbox
+            artworkImages.forEach(img => {
+                // Replace the onclick attribute with an event listener
+                const paintingId = parseInt(img.getAttribute('onclick').match(/id=(\d+)/)[1]);
+                img.removeAttribute('onclick');
+                
+                img.addEventListener('click', function() {
+                    // Find the painting in the global paintings array from script.js
+                    if (typeof openLightbox === 'function') {
+                        openLightbox(paintingId);
+                    } else {
+                        // Fallback if lightbox function isn't available
+                        window.location.href = `paintingdetail.html?id=${paintingId}`;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

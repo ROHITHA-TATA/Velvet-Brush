@@ -1,0 +1,20 @@
+IMAGE PLACEMENT INSTRUCTIONS
+---------------------------
+
+To display your artwork on the website, rename your image files as follows:
+
+1. painting1.jpg - The Ganesha Folk Art (first image in your set)
+2. painting2.jpg - The Musical Mandala (black and white guitar design)
+3. painting3.jpg - The Peacock Mandala (black and white peacock)
+4. painting4.jpg - The Sunset Bridge (silhouette on bridge with sunset)
+5. painting5.jpg - The Colorful Floral (bright flowers arrangement)
+6. painting6.jpg - The Musical Portrait (woman with guitar)
+7. hero-bg.jpg - Choose any image for the website header background
+
+Put all these files in the "images" folder, replacing the placeholder text files.
+
+After placing your images, open index.html in a web browser to see your complete gallery website.
+
+For more detailed instructions:
+- See README-IMAGES.md for full details
+- See image-placement-instructions.html for a visual guide 

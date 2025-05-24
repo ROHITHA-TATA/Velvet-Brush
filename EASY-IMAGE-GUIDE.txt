@@ -1,0 +1,35 @@
+EASY GUIDE TO ADD YOUR PAINTINGS TO YOUR WEBSITE
+================================================
+
+OPTION 1: USING THE HELPER SCRIPT (EASIEST)
+-------------------------------------------
+1. Copy the "copy-images.bat" file from this folder to wherever your paintings are saved
+2. Make sure your paintings are named exactly:
+   - painting1.jpg (Ganesha artwork)
+   - painting2.jpg (Musical Mandala)
+   - painting3.jpg (Peacock Mandala)
+   - painting4.jpg (Sunset Bridge)
+   - painting5.jpg (Colorful Floral)
+   - painting6.jpg (Musical Portrait)
+3. Double-click on the "copy-images.bat" file
+4. The script will automatically copy all your paintings to the correct location
+5. Open index.html to see your website with all your paintings
+
+OPTION 2: COPY MANUALLY
+-----------------------
+1. Rename your painting files to match these names exactly:
+   - painting1.jpg (Ganesha artwork)
+   - painting2.jpg (Musical Mandala)
+   - painting3.jpg (Peacock Mandala)
+   - painting4.jpg (Sunset Bridge)
+   - painting5.jpg (Colorful Floral)
+   - painting6.jpg (Musical Portrait)
+2. Copy these files to the "images" folder in your website
+3. Open index.html to see your website with all your paintings
+
+NEED HELP?
+----------
+If you're still having trouble:
+1. Make sure your images are saved as JPG format (not PNG or other formats)
+2. The filenames should be EXACTLY as shown above
+3. Copy them directly to the "images" folder (not inside any subfolder) 

@@ -1,4 +1,3 @@
-
 # 🎨 VelvetBrush – Handcrafted Paintings Portfolio Website
 
 [Live Demo](https://rohitha-tata.github.io/Velvet-Brush/)

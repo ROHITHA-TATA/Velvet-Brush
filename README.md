@@ -9,7 +9,7 @@ VelvetBrush is a beautifully designed, responsive web application built to showc
 
 ## ✨ Features
 
-- 🖼️ Dynamic painting gallery with category filters to easily browse artworks  
+- 🖼️  Dynamic painting gallery with category filters to easily browse artworks 
 - 🛒 Shopping cart with quantity control and local storage for session persistence  
 - 💡 Lightbox preview on artwork click for detailed viewing  
 - ❤️ Wishlist functionality to save favorite paintings  
